@@ -22,6 +22,16 @@ func (r *Ring) search(key string) int {
     // YOUR CODE GOES HERE //
     /////////////////////////
 
+	minHash := hashId(key)
+
+	//Return node with smallest hash bigger than minHash
+	//Assumes array is ordered
+	for i, n := range r.Nodes{
+		if(n.HashId > minHash){
+			return i
+		}
+	}
+
     return 0
 }
 
